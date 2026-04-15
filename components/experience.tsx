@@ -5,11 +5,25 @@ import { Briefcase, GraduationCap, ArrowUpRight } from "lucide-react";
 
 const workExperience = [
   {
+    title: "CNC Process R&D Engineer",
+    company: "Ebdaa Factory for Furniture Industries",
+    location: "Egypt",
+    period: "Dec 2025 - Present",
+    current: true,
+    responsibilities: [
+      "Researching and developing new CNC machining processes to improve production efficiency",
+      "Optimizing cutting parameters and toolpaths for enhanced surface finish and reduced cycle times",
+      "Conducting feasibility studies for new product designs and manufacturing techniques",
+      "Implementing innovative solutions to reduce material waste and improve yield",
+      "Collaborating with design teams to ensure manufacturability of new furniture concepts",
+      "Documenting R&D findings and creating standardized process guidelines",
+    ],
+  },
+  {
     title: "CNC Production Engineer",
     company: "Larouch",
     location: "10th of Ramadan City",
-    period: "Aug 2024 - Present",
-    current: true,
+    period: "Aug 2024 - Dec 2025",
     description:
       "Leading CNC production operations and implementing advanced manufacturing processes for premium furniture production.",
   },
@@ -122,9 +136,19 @@ export function Experience() {
                       <span>{job.location}</span>
                     </div>
 
-                    <p className="text-sm text-[var(--muted-foreground)] mb-3">
-                      {job.description}
-                    </p>
+                    {job.description && (
+                      <p className="text-sm text-[var(--muted-foreground)] mb-3">
+                        {job.description}
+                      </p>
+                    )}
+
+                    {job.responsibilities && (
+                      <ul className="text-sm text-[var(--muted-foreground)] mb-3 space-y-1.5 list-disc list-inside">
+                        {job.responsibilities.map((resp: string, idx: number) => (
+                          <li key={idx}>{resp}</li>
+                        ))}
+                      </ul>
+                    )}
 
                     <span className="text-xs text-[var(--muted-foreground)]">
                       {job.period}
@@ -193,7 +217,7 @@ export function Experience() {
                 <p className="text-sm opacity-90">Years Experience</p>
               </div>
               <div className="p-6 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 text-white text-center">
-                <span className="text-3xl font-bold">4</span>
+                <span className="text-3xl font-bold">5</span>
                 <p className="text-sm opacity-90">Companies</p>
               </div>
             </motion.div>
