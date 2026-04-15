@@ -1,3 +1,20 @@
+/*=============== CUSTOM FONTS ===============*/
+@font-face {
+    font-family: 'Queensides';
+    src: url('../fonts/QueensidesLight-ZVj3l.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Queensides';
+    src: url('../fonts/Queensides-3z7Ey.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Queensides';
+    src: url('../fonts/QueensidesMedium-x30zV.ttf') format('truetype');
+    font-weight: 500;
+}
+
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
 
@@ -21,7 +38,7 @@
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
   --body-font: 'Inter', sans-serif;
-  --title-font: 'Outfit', sans-serif;
+  --title-font: 'Queensides', 'Outfit', sans-serif;
   --biggest-font-size: 1.5rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -482,7 +499,7 @@ body.dark-theme {
 
 .qualification__grid {
     vertical-align: top;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 }
 
 .qualification__card {
@@ -504,7 +521,7 @@ body.dark-theme {
 /*=============== SERVICES ===============*/
 .services__container {
     row-gap: 2.5rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 }
 
 .services__card {
@@ -876,6 +893,7 @@ body.dark-theme {
     .home__container,
     .skills__container,
     .qualification__container,
+    .qualification__grid,
     .services__container,
     .contact__container {
         grid-template-columns: repeat(2, 1fr);
