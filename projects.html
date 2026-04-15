@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Projects - Yasser Salam | CNC Process R&D Engineer</title>
+    <meta name="description" content="Explore Yasser Salam's portfolio of CNC manufacturing projects, kitchen and wardrobe production, and industrial software solutions.">
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Yasser<span style="color: var(--first-color)">.</span></a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link"><i class="ri-home-5-line"></i><span>Home</span></a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link"><i class="ri-user-3-line"></i><span>About</span></a></li>
+                    <li class="nav__item"><a href="projects.html" class="nav__link active-link"><i class="ri-folder-line"></i><span>Projects</span></a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link"><i class="ri-message-3-line"></i><span>Contact</span></a></li>
+                </ul>
+
+                <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-sun-line change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-4-line"></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== PROJECTS HERO ====================-->
+        <section class="projects-hero section">
+            <div class="container">
+                <span class="section__subtitle">My Work</span>
+                <h1 class="section__title">Projects Portfolio</h1>
+                <p class="projects-hero__description">
+                    A showcase of my work in CNC manufacturing, furniture production, and industrial software solutions. 
+                    Each project represents a commitment to precision, innovation, and excellence.
+                </p>
+            </div>
+        </section>
+
+        <!--==================== PROJECT FILTERS ====================-->
+        <section class="project-filters section">
+            <div class="container">
+                <div class="filters">
+                    <button class="filter__btn active" data-filter="all">All Projects</button>
+                    <button class="filter__btn" data-filter="manufacturing">Manufacturing</button>
+                    <button class="filter__btn" data-filter="design">CAD/CAM Design</button>
+                    <button class="filter__btn" data-filter="software">Software</button>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PROJECTS GRID ====================-->
+        <section class="projects-grid section">
+            <div class="container">
+                <div class="projects__container">
+                    <!-- Project 1: Precision Kitchen Production -->
+                    <article class="project__card" data-category="manufacturing">
+                        <div class="project__image">
+                            <img src="assets/img/project-kitchen.jpg" alt="Precision Kitchen Manufacturing">
+                            <div class="project__overlay">
+                                <a href="#" class="project__link" aria-label="View project details">
+                                    <i class="ri-eye-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <span class="project__category">Manufacturing</span>
+                            <h3 class="project__title">Precision Kitchen Production</h3>
+                            <p class="project__description">
+                                Led end-to-end CNC manufacturing for high-end bespoke kitchen production at Larouch. 
+                                Implemented optimized WoodWOP programs reducing cycle times by 15% while maintaining 
+                                strict quality standards.
+                            </p>
+                            <ul class="project__tech">
+                                <li>WoodWOP 7.2</li>
+                                <li>Homag Router</li>
+                                <li>Quality Assurance</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Custom Wardrobe Systems -->
+                    <article class="project__card" data-category="manufacturing">
+                        <div class="project__image">
+                            <img src="assets/img/project-wardrobe.jpg" alt="Custom Wardrobe Systems">
+                            <div class="project__overlay">
+                                <a href="#" class="project__link" aria-label="View project details">
+                                    <i class="ri-eye-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <span class="project__category">Manufacturing</span>
+                            <h3 class="project__title">Custom Wardrobe Systems</h3>
+                            <p class="project__description">
+                                Developed comprehensive CNC programs for large-scale wardrobe production lines at Artniture. 
+                                Established standardized workflow routing ensuring operational continuity and consistent output quality.
+                            </p>
+                            <ul class="project__tech">
+                                <li>Production Planning</li>
+                                <li>CNC Drill</li>
+                                <li>Auto Saw</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: CNC Process Optimization -->
+                    <article class="project__card" data-category="manufacturing">
+                        <div class="project__image">
+                            <img src="assets/img/project-cnc.jpg" alt="CNC Process Optimization">
+                            <div class="project__overlay">
+                                <a href="#" class="project__link" aria-label="View project details">
+                                    <i class="ri-eye-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <span class="project__category">Manufacturing</span>
+                            <h3 class="project__title">CNC Process Optimization</h3>
+                            <p class="project__description">
+                                R&D initiative at Ebdaa Factory implementing advanced DXF layer naming conventions and 
+                                toolpath optimizations for Homag machinery. Achieved significant waste reduction and improved 
+                                manufacturing efficiency.
+                            </p>
+                            <ul class="project__tech">
+                                <li>DXF Layer Logic</li>
+                                <li>BPP5 Programming</li>
+                                <li>Toolpath Optimization</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: CAD/CAM Design Pipeline -->
+                    <article class="project__card" data-category="design">
+                        <div class="project__image">
+                            <img src="assets/img/project-cad.jpg" alt="CAD/CAM Design Pipeline">
+                            <div class="project__overlay">
+                                <a href="#" class="project__link" aria-label="View project details">
+                                    <i class="ri-eye-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <span class="project__category">CAD/CAM Design</span>
+                            <h3 class="project__title">CAD-to-CNC Pipeline</h3>
+                            <p class="project__description">
+                                Established streamlined design-to-manufacturing pipeline using AutoCAD, SolidWorks with Swood, 
+                                and automated board optimization. Reduced design iteration cycles and improved first-pass yield rates.
+                            </p>
+                            <ul class="project__tech">
+                                <li>AutoCAD</li>
+                                <li>SolidWorks & Swood</li>
+                                <li>Board Optimization</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Production KPI Framework -->
+                    <article class="project__card" data-category="software">
+                        <div class="project__image">
+                            <img src="assets/img/project-production.jpg" alt="Production KPI Framework">
+                            <div class="project__overlay">
+                                <a href="#" class="project__link" aria-label="View project details">
+                                    <i class="ri-eye-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <span class="project__category">Industrial Architecture</span>
+                            <h3 class="project__title">Production KPI Framework</h3>
+                            <p class="project__description">
+                                Architected comprehensive improvement plans establishing robust KPI frameworks and operational 
+                                workflows. Implemented daily output tracking and manufacturing efficiency reporting systems.
+                            </p>
+                            <ul class="project__tech">
+                                <li>KPI Development</li>
+                                <li>Process Flow</li>
+                                <li>Efficiency Tracking</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Factory Portal System -->
+                    <article class="project__card" data-category="software">
+                        <div class="project__image">
+                            <img src="assets/img/project-software.jpg" alt="Factory Portal System">
+                            <div class="project__overlay">
+                                <a href="#" class="project__link" aria-label="View project details">
+                                    <i class="ri-eye-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project__content">
+                            <span class="project__category">Software Development</span>
+                            <h3 class="project__title">Factory Portal System</h3>
+                            <p class="project__description">
+                                Designed and developed factory portals to centralize managerial operations, seamlessly linking 
+                                IT software logic with physical floor production. Full-stack solution bridging operations and technology.
+                            </p>
+                            <ul class="project__tech">
+                                <li>Full-Stack Development</li>
+                                <li>Process Automation</li>
+                                <li>Data Integration</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== STATISTICS ====================-->
+        <section class="stats section">
+            <div class="container">
+                <div class="stats__grid">
+                    <div class="stat__card">
+                        <i class="ri-settings-3-line stat__icon"></i>
+                        <span class="stat__number">50+</span>
+                        <span class="stat__label">Projects Completed</span>
+                    </div>
+                    <div class="stat__card">
+                        <i class="ri-building-line stat__icon"></i>
+                        <span class="stat__number">5</span>
+                        <span class="stat__label">Companies</span>
+                    </div>
+                    <div class="stat__card">
+                        <i class="ri-time-line stat__icon"></i>
+                        <span class="stat__number">5+</span>
+                        <span class="stat__label">Years Experience</span>
+                    </div>
+                    <div class="stat__card">
+                        <i class="ri-award-line stat__icon"></i>
+                        <span class="stat__number">15%</span>
+                        <span class="stat__label">Avg. Efficiency Improvement</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CTA ====================-->
+        <section class="cta section">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">Have a Project in Mind?</h2>
+                    <p class="cta__description">Let's discuss how I can help optimize your manufacturing processes or develop custom solutions for your factory.</p>
+                    <div class="cta__buttons">
+                        <a href="contact.html" class="button">Start a Conversation</a>
+                        <a href="about.html" class="button button--ghost">Learn More About Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container">
+            <h1 class="footer__title">Yasser Salam</h1>
+            <p>CNC Process R&D Engineer & Industrial Architect</p>
+
+            <ul class="footer__list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="about.html" class="footer__link">About</a></li>
+                <li><a href="projects.html" class="footer__link">Projects</a></li>
+                <li><a href="contact.html" class="footer__link">Contact</a></li>
+            </ul>
+
+            <ul class="footer__social">
+                <a href="https://linkedin.com/in/yasserious1" target="_blank" class="footer__social-link" aria-label="LinkedIn"><i class="ri-linkedin-box-line"></i></a>
+                <a href="https://github.com/yasseriouss" target="_blank" class="footer__social-link" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                <a href="mailto:yassersalllam@gmail.com" class="footer__social-link" aria-label="Email"><i class="ri-mail-line"></i></a>
+            </ul>
+
+            <span class="footer__copy">&copy; 2025 Yasser Salam. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=============== PROJECT FILTER JS ===============-->
+    <script>
+        // Project filtering functionality
+        const filterBtns = document.querySelectorAll('.filter__btn');
+        const projectCards = document.querySelectorAll('.project__card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
