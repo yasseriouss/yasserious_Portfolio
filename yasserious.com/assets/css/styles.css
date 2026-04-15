@@ -1,29 +1,44 @@
+/*=============== CUSTOM FONTS ===============*/
+@font-face {
+    font-family: 'Queensides';
+    src: url('../fonts/QueensidesLight-ZVj3l.ttf') format('truetype');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Queensides';
+    src: url('../fonts/Queensides-3z7Ey.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Queensides';
+    src: url('../fonts/QueensidesMedium-x30zV.ttf') format('truetype');
+    font-weight: 500;
+}
+
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(207, 65%, 65%);
-  --title-color: hsl(207, 4%, 16%);
-  --text-color: hsl(207, 4%, 28%);
-  --text-color-light: hsl(207, 4%, 56%);
-  --body-color: hsl(207, 4%, 99%);
-  --container-color: hsl(207, 4%, 95%);
+  /*Color mode Hex based on Lofi Theme*/
+  --first-color: #d4af37; /* Gold Accent */
+  --title-color: #1a1710;
+  --text-color: #201e18;
+  --text-color-light: #a49980;
+  --body-color: #EDE1CB;
+  --container-color: #f5f0e8;
 
-  /* Change the first number */
-  /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
   --gradient-color: linear-gradient(180deg,
-                      hsla(207, 48%, 72%, 0),
-                      hsla(207, 65%, 65%, 1));
+                      rgba(212, 175, 55, 0),
+                      rgba(212, 175, 55, 1));
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
-  --body-font: 'Roboto', sans-serif;
-  --title-font: 'Lora', serif;
+  --body-font: 'Inter', sans-serif;
+  --title-font: 'Queensides', 'Outfit', sans-serif;
   --biggest-font-size: 1.5rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -115,10 +130,10 @@ img {
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --title-color: hsl(207, 4%, 95%);
-  --text-color: hsl(207, 4%, 65%);
-  --body-color: hsl(207, 4%, 10%);
-  --container-color: hsl(207, 4%, 12%);
+  --title-color: #f0ebe0;
+  --text-color: #c9bfad;
+  --body-color: #1a1710;
+  --container-color: #201e18;
 }
 
 /*========== 
@@ -128,20 +143,20 @@ body.dark-theme {
 .dark-theme .nav__menu,
 .dark-theme .nav__buttons,
 .dark-theme .scrollup {
-    background-color: hsla(207, 4%, 12%, .8);
+    background-color: rgba(32, 30, 24, 0.8);
     backdrop-filter: blur(24px);
 }
 
 .dark-theme .section__border {
-    border-bottom: 1px solid hsl(207, 4%, 32%);
+    border-bottom: 1px solid rgba(237, 225, 203, 0.15);
 }
 
 .dark-theme ::-webkit-scrollbar {
-    background-color: hsl(207, 4%, 15%);
+    background-color: #1a1710;
 }
 
 .dark-theme ::-webkit-scrollbar-thumb {
-    background-color: hsl(207, 4%, 25%);
+    background-color: #201e18;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -484,7 +499,7 @@ body.dark-theme {
 
 .qualification__grid {
     vertical-align: top;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 }
 
 .qualification__card {
@@ -506,7 +521,7 @@ body.dark-theme {
 /*=============== SERVICES ===============*/
 .services__container {
     row-gap: 2.5rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
 }
 
 .services__card {
@@ -759,11 +774,11 @@ body.dark-theme {
 }
 
 .color-red {
-    color: hsl(4, 71%, 50%);
+    color: #FF5B5C; /* Lofi Red */
 }
 
 .color-blue {
-    color: hsl(207, 56%, 45%);
+    color: #d4af37; /* Replaced with Gold just in case */
 }
 
 /*=============== FOOTER ===============*/
@@ -878,6 +893,7 @@ body.dark-theme {
     .home__container,
     .skills__container,
     .qualification__container,
+    .qualification__grid,
     .services__container,
     .contact__container {
         grid-template-columns: repeat(2, 1fr);
