@@ -22,109 +22,88 @@ const navLink = document.querySelectorAll('.nav__link')
 
 const linkAction = () =>{
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*=============== SWIPER PROJECTS ===============*/
-let swiperProjects = new Swiper(".projects__container", {
-    loop: true,
-    spaceBetween: 24,
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    breakpoints: {
-        1200: {
-          slidesPerView: 2,
-          spaceBetween: -56,
+/*=============== SWIPER PROJECTS (only if swiper exists) ===============*/
+if (typeof Swiper !== 'undefined' && document.querySelector('.projects__container.swiper')) {
+    let swiperProjects = new Swiper(".projects__container", {
+        loop: true,
+        spaceBetween: 24,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
-    },
-});
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        breakpoints: {
+            1200: {
+              slidesPerView: 2,
+              spaceBetween: -56,
+            },
+        },
+    });
+}
 
-/*=============== SWIPER TESTIMONIAL ===============*/
-let swiperTestimonial = new Swiper(".testimonial__container", {
-    grabCursor: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-});
+/*=============== SWIPER TESTIMONIAL (only if swiper exists) ===============*/
+if (typeof Swiper !== 'undefined' && document.querySelector('.testimonial__container.swiper')) {
+    let swiperTestimonial = new Swiper(".testimonial__container", {
+        grabCursor: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+    });
+}
 
-/*=============== EMAIL JS ===============*/
+/*=============== CONTACT FORM ===============*/
 const contactForm = document.getElementById('contact-form'),
-      contactName = document.getElementById('contact-name'),
-      contactEmail = document.getElementById('contact-email'),
-      contactProject = document.getElementById('contact-project'),
       contactMessage = document.getElementById('contact-message')
 
-const sendEmail = (e) =>{
-    e.preventDefault()
-
-    // Check if the field has a value
-    if(contactName.value === '' || contactEmail.value === '' || contactProject.value === ''){
-        // Add and remove color
-        contactMessage.classList.remove('color-blue')
-        contactMessage.classList.add('color-red')
-
-        // Show message
-        contactMessage.textContent = 'Write all the input fields 📩'
-    }else{
-        // serviceID - templateID - #form - publicKey
-        emailjs.sendForm('service_id','template_id','#contact-form','public_key')
-            .then(() =>{
-                // Show message and add color
-                contactMessage.classList.add('color-blue')
-                contactMessage.textContent = 'Message sent ✅'
-
-                // Remove message after five seconds
-                setTimeout(() =>{
-                    contactMessage.textContent = ''
-                }, 5000)
-            }, (error) =>{
-                alert('OOPS! SOMETHING HAS FAILED...', error)
-            })
-        
-        // To clear the input field
-        contactName.value = ''
-        contactEmail.value = ''
-        contactProject.value = ''
-    }
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        // Let the form submit naturally to Formspree
+        // Show loading state
+        if (contactMessage) {
+            contactMessage.textContent = 'Sending message...'
+            contactMessage.classList.remove('color-red')
+            contactMessage.classList.add('color-blue')
+        }
+    })
 }
-contactForm.addEventListener('submit', sendEmail)
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 const sections = document.querySelectorAll('section[id]')
     
-const scrollActive = () =>{
-  	const scrollY = window.pageYOffset
+const scrollActive = () => {
+    const scrollY = window.pageYOffset
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight,
+              sectionTop = current.offsetTop - 58,
+              sectionId = current.getAttribute('id'),
+              sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
-		if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
+        if (sectionsClass) {
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                sectionsClass.classList.add('active-link')
+            } else {
+                sectionsClass.classList.remove('active-link')
+            }
+        }
+    })
 }
 window.addEventListener('scroll', scrollActive)
 
 /*=============== SHOW SCROLL UP ===============*/ 
-const scrollUp = () =>{
-	const scrollUp = document.getElementById('scroll-up')
-    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-						: scrollUp.classList.remove('show-scroll')
+const scrollUp = () => {
+    const scrollUpBtn = document.getElementById('scroll-up')
+    if (scrollUpBtn) {
+        this.scrollY >= 350 ? scrollUpBtn.classList.add('show-scroll')
+                            : scrollUpBtn.classList.remove('show-scroll')
+    }
 }
 window.addEventListener('scroll', scrollUp)
 
@@ -143,41 +122,119 @@ const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moo
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    if (themeButton) {
+        themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+    }
 }
 
 // Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
-    document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-})
+if (themeButton) {
+    themeButton.addEventListener('click', () => {
+        document.body.classList.toggle(darkTheme)
+        themeButton.classList.toggle(iconTheme)
+        localStorage.setItem('selected-theme', getCurrentTheme())
+        localStorage.setItem('selected-icon', getCurrentIcon())
+    })
+}
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-const scrollHeader = () =>{
+const scrollHeader = () => {
     const header = document.getElementById('header')
-    // When the scroll is greater than 50 viewport height, add the scroll-header class to the header tag
-    this.scrollY >= 50 ? header.classList.add('scroll-header') 
-                       : header.classList.remove('scroll-header')
+    if (header) {
+        this.scrollY >= 50 ? header.classList.add('scroll-header') 
+                           : header.classList.remove('scroll-header')
+    }
 }
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2500,
-    delay: 400,
-    // reset: true // Animations repeat
-})
+if (typeof ScrollReveal !== 'undefined') {
+    const sr = ScrollReveal({
+        origin: 'top',
+        distance: '60px',
+        duration: 2500,
+        delay: 400,
+    })
 
-sr.reveal(`.home__data, .projects__container, .testimonial__container, .footer__container`)
-sr.reveal(`.home__info div`, {delay: 600, origin: 'bottom', interval: 100})
-sr.reveal(`.skills__content:nth-child(1), .contact__content:nth-child(1)`, {origin: 'left'})
-sr.reveal(`.skills__content:nth-child(2), .contact__content:nth-child(2)`, {origin: 'right'})
-sr.reveal(`.qualification__content, .services__card`, {interval: 100})
+    // Home page animations
+    sr.reveal('.home__data, .home__images')
+    sr.reveal('.home__info div', {delay: 600, origin: 'bottom', interval: 100})
+    
+    // Services animations
+    sr.reveal('.services__card', {interval: 100})
+    
+    // Skills animations
+    sr.reveal('.skills__content:nth-child(1)', {origin: 'left'})
+    sr.reveal('.skills__content:nth-child(2)', {origin: 'right'})
+    
+    // About page animations
+    sr.reveal('.summary__card', {interval: 100})
+    sr.reveal('.competency', {interval: 100})
+    sr.reveal('.timeline__item', {interval: 150})
+    sr.reveal('.education__card', {interval: 100})
+    sr.reveal('.language__card', {interval: 100})
+    
+    // Projects page animations
+    sr.reveal('.project__card', {interval: 100})
+    sr.reveal('.stat__card', {interval: 100})
+    
+    // Contact page animations
+    sr.reveal('.contact__content:nth-child(1)', {origin: 'left'})
+    sr.reveal('.contact__content:nth-child(2)', {origin: 'right'})
+    sr.reveal('.location__card', {interval: 100})
+    sr.reveal('.faq__item', {interval: 100})
+    
+    // CTA animations
+    sr.reveal('.cta__content')
+    
+    // Footer animations
+    sr.reveal('.footer__container')
+}
+
+/*=============== ANIMATE SKILL BARS ON SCROLL ===============*/
+const skillBars = document.querySelectorAll('.language__progress')
+
+const animateSkillBars = () => {
+    skillBars.forEach(bar => {
+        const width = bar.style.width
+        bar.style.width = '0'
+        setTimeout(() => {
+            bar.style.width = width
+        }, 500)
+    })
+}
+
+// Trigger animation when skills section is visible
+if (skillBars.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateSkillBars()
+                observer.disconnect()
+            }
+        })
+    }, { threshold: 0.5 })
+
+    const languagesSection = document.querySelector('.languages')
+    if (languagesSection) {
+        observer.observe(languagesSection)
+    }
+}
+
+/*=============== SMOOTH SCROLL FOR ANCHOR LINKS ===============*/
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href')
+        if (href !== '#') {
+            e.preventDefault()
+            const target = document.querySelector(href)
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
+            }
+        }
+    })
+})

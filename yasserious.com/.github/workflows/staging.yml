@@ -1,0 +1,25 @@
+name: 🧪 Deploy Portfolio to DreamHost (Staging)
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy to Staging
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Deploy files via SCP (SSH)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          source: "index.html,style.css,script.js,light-theme.css,lofi-theme-data.css"
+          target: /home/yasserious/staging.portfolio/
