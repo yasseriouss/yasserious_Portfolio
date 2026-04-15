@@ -15,19 +15,12 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - name: 📂 Sync files via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      - name: 📂 Deploy files via SCP (SSH)
+        uses: appleboy/scp-action@v0.1.7
         with:
-          protocol: ftp
-          server: ${{ secrets.SFTP_HOST }}
-          port: 21
+          host: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          server-dir: /home/yasserious/yasserious.com/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            Workflows/**
-            .github/**
-            README.md
+          port: 22
+          source: "index.html,style.css,script.js,light-theme.css,lofi-theme-data.css"
+          target: /home/yasserious/yasserious.com/
