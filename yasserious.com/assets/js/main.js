@@ -114,17 +114,27 @@ const iconTheme = 'ri-sun-line'
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
 
 // We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
     document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
     if (themeButton) {
-        themeButton.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+        if (selectedTheme === 'dark') {
+            themeButton.classList.add('ri-sun-line')
+            themeButton.classList.remove('ri-moon-line')
+        } else {
+            themeButton.classList.add('ri-moon-line')
+            themeButton.classList.remove('ri-sun-line')
+        }
+    }
+} else {
+    // Default to dark theme icon which is sun
+    if (themeButton && document.body.classList.contains(darkTheme)) {
+        themeButton.classList.add('ri-sun-line')
+        themeButton.classList.remove('ri-moon-line')
     }
 }
 
@@ -132,9 +142,16 @@ if (selectedTheme) {
 if (themeButton) {
     themeButton.addEventListener('click', () => {
         document.body.classList.toggle(darkTheme)
-        themeButton.classList.toggle(iconTheme)
+        
+        if (document.body.classList.contains(darkTheme)) {
+            themeButton.classList.add('ri-sun-line')
+            themeButton.classList.remove('ri-moon-line')
+        } else {
+            themeButton.classList.add('ri-moon-line')
+            themeButton.classList.remove('ri-sun-line')
+        }
+        
         localStorage.setItem('selected-theme', getCurrentTheme())
-        localStorage.setItem('selected-icon', getCurrentIcon())
     })
 }
 
