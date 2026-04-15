@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Yasser Sallam | Technical Creative & Production Expert</title>
+        <meta
+            name="description"
+            content="Bridging the gap between precision engineering, digital innovation, and creative solutions."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Tajawal:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="lofi-theme-data.css" />
+        <link rel="stylesheet" href="light-theme.css" />
+    </head>
+    <body>
+        <div class="blob-bg"></div>
+
+        <nav id="navbar" class="navbar">
+            <div class="container nav-container">
+                <a href="#hero" class="logo"
+                    >Y<span class="gradient-text">.</span>Sallam</a
+                >
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link-text" data-i18n="nav-about">About</a></li>
+                    <li><a href="#experience" class="nav-link-text" data-i18n="nav-experience">Experience</a></li>
+                    <li><a href="#projects" class="nav-link-text" data-i18n="nav-projects">Projects</a></li>
+                    <li><a href="#skills" class="nav-link-text" data-i18n="nav-skills">Skills</a></li>
+                    <li><a href="#gallery" class="nav-link-text" data-i18n="nav-gallery">Gallery</a></li>
+                    <li>
+                        <a href="#contact" class="btn btn-primary nav-btn" data-i18n="nav-contact"
+                            >Contact Me</a
+                        >
+                    </li>
+                </ul>
+                <div class="nav-controls">
+                    <div class="theme-dropdown-wrapper">
+                        <button id="themeToggle" class="control-btn" title="Toggle theme">🎨</button>
+                        <div class="theme-dropdown" id="themeDropdown">
+                            <button class="theme-option" data-theme="lofi">Lofi</button>
+                            <button class="theme-option" data-theme="dark">Dark</button>
+                            <button class="theme-option" data-theme="light">Light</button>
+                        </div>
+                    </div>
+                    <!-- <button id="langToggle" class="control-btn" title="عربي">EN</button> -->
+                </div>
+                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="hero" class="hero section">
+                <div class="container hero-container">
+                    <div class="hero-content animate-on-scroll slide-up">
+                        <span class="eyebrow" data-i18n="hero-eyebrow"
+                            >Technical Creative & Production Expert</span
+                        >
+                        <h1 class="hero-title">
+                            Yasser <span class="gradient-text">Sallam</span>
+                        </h1>
+                        <p class="hero-description" data-i18n="hero-description">
+                            Bridging the gap between precision engineering,
+                            digital innovation, and creative solutions.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#experience" class="btn btn-primary" data-i18n="hero-btn-1"
+                                >Explore My Journey</a
+                            >
+                            <a href="#contact" class="btn btn-secondary" data-i18n="hero-btn-2"
+                                >Get In Touch</a
+                            >
+                        </div>
+                    </div>
+
+                        <div class="hero-meta animate-on-scroll fade-in delay-1">
+                        <div class="location-group">
+                            <span class="meta-icon">📍</span>
+                            <div class="locations">
+                                <span data-i18n="location-city">10th Of Ramadan City</span>
+                                <span data-i18n="location-full">6 October, 1st District, Egypt</span>
+                            </div>
+                        </div>
+                        <div class="metrics">
+                            <div class="metric">
+                                <span class="highlight">7+</span> <span data-i18n="experience-label">Years CNC Exp</span>
+                            </div>
+                            <div class="metric">
+                                <span class="highlight">126</span> <span data-i18n="projects-label">Projects Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about section">
+                <div class="container">
+                    <div class="section-header animate-on-scroll slide-up">
+                        <h2 data-i18n="about-title">A Multi-Dimensional Professional</h2>
+                        <p data-i18n="about-subtitle">
+                            Combining technical precision with creative
+                            innovation to deliver exceptional results across
+                            industries.
+                        </p>
+                    </div>
+
+                    <div class="about-grid">
+                        <div
+                            class="about-text glass-card animate-on-scroll slide-right"
+                        >
+                            <p data-i18n="about-text-1">
+                                Results-driven professional with a unique blend
+                                of engineering precision and creative
+                                problem-solving. Specializing in advanced
+                                furniture manufacturing with expertise in
+                                production optimization, quality control, and
+                                precision woodworking processes.
+                            </p>
+                            <p data-i18n="about-text-2">
+                                My background spans IT systems management and
+                                technical sales, enabling me to bridge technical
+                                and business domains seamlessly. Committed to
+                                implementing innovative solutions that enhance
+                                efficiency, reduce waste, and maintain
+                                exceptional quality standards.
+                            </p>
+                        </div>
+
+                        <div
+                            class="talents-grid animate-on-scroll slide-left delay-1"
+                        >
+                            <div class="talent-card glass-card">
+                                <div class="talent-icon">⚙️</div>
+                                <h3>CNC & Manufacturing</h3>
+                                <p>
+                                    5+ years mastering precision production with
+                                    Homag CNC systems, WoodWOP, and advanced
+                                    woodworking.
+                                </p>
+                            </div>
+                            <div class="talent-card glass-card">
+                                <div class="talent-icon">📐</div>
+                                <h3>Design & CAD</h3>
+                                <p>
+                                    Proficient in AutoCAD, Fusion 360,
+                                    SolidWorks, and creative 3D modeling for
+                                    furniture design.
+                                </p>
+                            </div>
+                            <div class="talent-card glass-card">
+                                <div class="talent-icon">💻</div>
+                                <h3>IT & Client Relations</h3>
+                                <p>
+                                    Background in systems administration,
+                                    technical sales, and building lasting client
+                                    partnerships.
+                                </p>
+                            </div>
+                            <div class="talent-card glass-card">
+                                <div class="talent-icon">🚀</div>
+                                <h3>Innovation & Leadership</h3>
+                                <p>
+                                    Driving production optimization,
+                                    implementing solutions, and leading
+                                    cross-functional teams.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="experience section">
+                <div class="container">
+                    <div class="section-header animate-on-scroll slide-up">
+                        <h2 data-i18n="experience-title">
+                            Professional
+                            <span class="gradient-text">Journey</span>
+                        </h2>
+                        <p data-i18n="experience-subtitle">
+                            A track record of excellence across manufacturing
+                            and technology sectors.
+                        </p>
+                    </div>
+
+                    <div class="timeline">
+                        <!-- Exp 1 -->
+                        <div class="timeline-item animate-on-scroll slide-up">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content glass-card hover-glow">
+                                <span class="badge">Current Position</span>
+                                <div class="timeline-header">
+                                    <h3>CNC Production Engineer</h3>
+                                    <span class="timeline-period"
+                                        >08/2024 – Present</span
+                                    >
+                                </div>
+                                <h4 class="company-name">
+                                    Larouch for Wooden Furniture · 10th of
+                                    Ramadan City
+                                </h4>
+                                <ul class="responsibilities">
+                                    <li>
+                                        Operate and program CNC machines using
+                                        WoodWOP software for Homag equipment.
+                                    </li>
+                                    <li>
+                                        Supervise woodworking operations for
+                                        high-end kitchen and wardrobe products.
+                                    </li>
+                                    <li>
+                                        Coordinate production schedules and
+                                        ensure timely delivery.
+                                    </li>
+                                    <li>
+                                        Liaise with design and quality
+                                        departments to maintain standards.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Exp 2 -->
+                        <div class="timeline-item animate-on-scroll slide-up">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content glass-card hover-glow">
+                                <div class="timeline-header">
+                                    <h3>CNC Production Engineer</h3>
+                                    <span class="timeline-period"
+                                        >04/2024 – 08/2024</span
+                                    >
+                                </div>
+                                <h4 class="company-name">
+                                    Ebdaa Factory (ENCID) · Badr City
+                                </h4>
+                                <ul class="responsibilities">
+                                    <li>
+                                        Created machine programs and reports.
+                                    </li>
+                                    <li>
+                                        Managed production processes involving
+                                        Homag CNC machinery.
+                                    </li>
+                                    <li>
+                                        Maintained coordination with the quality
+                                        control department.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Exp 3 -->
+                        <div class="timeline-item animate-on-scroll slide-up">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content glass-card hover-glow">
+                                <div class="timeline-header">
+                                    <h3>CNC Production Engineer</h3>
+                                    <span class="timeline-period"
+                                        >11/2019 – 06/2024</span
+                                    >
+                                </div>
+                                <h4 class="company-name">
+                                    Artniture · 6 October City
+                                </h4>
+                                <ul class="responsibilities">
+                                    <li>
+                                        Developed CNC programs and controlled
+                                        production for kitchens and wardrobes.
+                                    </li>
+                                    <li>
+                                        Maintained operational continuity across
+                                        all CNC processes.
+                                    </li>
+                                    <li>
+                                        Generated production reports and
+                                        maintained client communication.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Exp 4 -->
+                        <div class="timeline-item animate-on-scroll slide-up">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content glass-card hover-glow">
+                                <div class="timeline-header">
+                                    <h3>Account Manager</h3>
+                                    <span class="timeline-period"
+                                        >04/2017 – 09/2019</span
+                                    >
+                                </div>
+                                <h4 class="company-name">
+                                    Yieldz IT Solutions · 6 October City
+                                </h4>
+                                <ul class="responsibilities">
+                                    <li>
+                                        Provided IT consultancy and software
+                                        solutions.
+                                    </li>
+                                    <li>
+                                        Managed client accounts, business needs,
+                                        and solution implementation.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects section">
+                <div class="container">
+                    <div class="section-header animate-on-scroll slide-up">
+                        <h2>Featured Projects</h2>
+                        <p>A showcase of projects and work I've completed.</p>
+                    </div>
+
+                    <div class="grid three projects-grid">
+                        <article
+                            class="project-card glass-card hover-lift animate-on-scroll slide-up"
+                        >
+                            <span class="category-badge">Manufacturing</span>
+                            <h3>Precision Kitchen Systems</h3>
+                            <p>
+                                Optimized CNC workflows for premium kitchen
+                                builds with consistent quality controls.
+                            </p>
+                        </article>
+                        <article
+                            class="project-card glass-card hover-lift animate-on-scroll slide-up delay-1"
+                        >
+                            <span class="category-badge">Production</span>
+                            <h3>Wardrobe Production Line</h3>
+                            <p>
+                                Streamlined multi-stage production for bespoke
+                                wardrobes with reduced waste.
+                            </p>
+                        </article>
+                        <article
+                            class="project-card glass-card hover-lift animate-on-scroll slide-up delay-2"
+                        >
+                            <span class="category-badge">CAD & Design</span>
+                            <h3>Digital Design Pipeline</h3>
+                            <p>
+                                Built a design-to-production pipeline linking
+                                CAD outputs to CNC operations.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills section">
+                <div class="container">
+                    <div class="section-header animate-on-scroll slide-up">
+                        <h2>
+                            Skills &
+                            <span class="gradient-text">Expertise</span>
+                        </h2>
+                        <p>
+                            A versatile toolkit spanning manufacturing, design,
+                            and technology.
+                        </p>
+                    </div>
+
+                    <div class="grid three skills-grid">
+                        <!-- Skill Group 1 -->
+                        <div
+                            class="skill-group glass-card hover-glow animate-on-scroll slide-up"
+                        >
+                            <h3>CNC Programming</h3>
+                            <div class="pill-group">
+                                <span class="skill-pill">WoodWOP 7.2</span>
+                                <span class="skill-pill">ArtCAM</span>
+                                <span class="skill-pill">Aspire</span>
+                            </div>
+                        </div>
+                        <!-- Skill Group 2 -->
+                        <div
+                            class="skill-group glass-card hover-glow animate-on-scroll slide-up delay-1"
+                        >
+                            <h3>Machine Expertise</h3>
+                            <div class="pill-group">
+                                <span class="skill-pill">Homag CNC Router</span>
+                                <span class="skill-pill">CNC Drill</span>
+                                <span class="skill-pill">Auto Saw</span>
+                            </div>
+                        </div>
+                        <!-- Skill Group 3 -->
+                        <div
+                            class="skill-group glass-card hover-glow animate-on-scroll slide-up delay-2"
+                        >
+                            <h3>Design Software</h3>
+                            <div class="pill-group">
+                                <span class="skill-pill">AutoCAD</span>
+                                <span class="skill-pill">Fusion 360</span>
+                                <span class="skill-pill">SolidWorks</span>
+                                <span class="skill-pill">Swood</span>
+                            </div>
+                        </div>
+                        <!-- Skill Group 4 -->
+                        <div
+                            class="skill-group glass-card hover-glow animate-on-scroll slide-up"
+                        >
+                            <h3>Project Management</h3>
+                            <div class="pill-group">
+                                <span class="skill-pill">Leadership</span>
+                                <span class="skill-pill">Time Management</span>
+                                <span class="skill-pill"
+                                    >Process Optimization</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Skill Group 5 -->
+                        <div
+                            class="skill-group glass-card hover-glow animate-on-scroll slide-up delay-1"
+                        >
+                            <h3>IT & Sales</h3>
+                            <div class="pill-group">
+                                <span class="skill-pill"
+                                    >Systems Administration</span
+                                >
+                                <span class="skill-pill">Client Relations</span>
+                                <span class="skill-pill"
+                                    >Technical Consultancy</span
+                                >
+                            </div>
+                        </div>
+                        <!-- Skill Group 6 -->
+                        <div
+                            class="skill-group glass-card hover-glow animate-on-scroll slide-up delay-2"
+                        >
+                            <h3>Languages</h3>
+                            <div class="pill-group">
+                                <span class="skill-pill">Arabic (Native)</span>
+                                <span class="skill-pill"
+                                    >English (Professional)</span
+                                >
+                                <span class="skill-pill">Spanish (Basic)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education & Testimonials -->
+            <section id="education" class="education section">
+                <div class="container">
+                    <div class="grid two mix-grid">
+                        <div
+                            class="education-wrap animate-on-scroll slide-right"
+                        >
+                            <div class="section-header align-left">
+                                <h2>Education</h2>
+                            </div>
+                            <div class="education-card glass-card hover-glow">
+                                <div class="degree-icon">🎓</div>
+                                <h3>B.Sc. Management Information Systems</h3>
+                                <div class="school-info">
+                                    <strong
+                                        >Higher Technological Institute</strong
+                                    >
+                                    <span>10th of Ramadan Branch</span>
+                                </div>
+                                <span class="period-pill">2012 – 2016</span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="testimonials-wrap animate-on-scroll slide-left"
+                        >
+                            <div class="section-header align-left">
+                                <h2>Testimonials</h2>
+                            </div>
+                            <div class="testimonial-cards">
+                                <div class="testimonial-card glass-card">
+                                    <div class="quote-icon">"</div>
+                                    <p class="quote">
+                                        Yasser brings clarity to complex
+                                        production challenges and raises quality
+                                        across the floor.
+                                    </p>
+                                    <div class="author-meta">
+                                        <strong>Ahmed Hassan</strong>
+                                        <span
+                                            >Production Manager · Larouch</span
+                                        >
+                                    </div>
+                                </div>
+                                <div class="testimonial-card glass-card">
+                                    <div class="quote-icon">"</div>
+                                    <p class="quote">
+                                        Reliable, proactive, and highly skilled
+                                        with both machines and people.
+                                    </p>
+                                    <div class="author-meta">
+                                        <strong>Mona El-Sayed</strong>
+                                        <span>Operations Lead · Artniture</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="gallery section">
+                <div class="container">
+                    <div class="section-header animate-on-scroll slide-up">
+                        <h2 data-i18n="gallery-title">
+                            Instagram <span class="gradient-text">Gallery</span>
+                        </h2>
+                        <p data-i18n="gallery-subtitle">
+                            Follow my creative journey and latest updates on Instagram @yasserious_
+                        </p>
+                    </div>
+
+                    <div class="instagram-container animate-on-scroll fade-in">
+                        <div class="instagram-feed">
+                            <!-- Instagram Feed Embed -->
+                            <iframe src="https://www.instagram.com/yasserious_/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                        </div>
+                        <div class="instagram-info glass-card animate-on-scroll slide-left">
+                            <h3>@yasserious_</h3>
+                            <p data-i18n="gallery-text">
+                                Stay updated with my latest projects, behind-the-scenes moments, and creative endeavors.
+                            </p>
+                            <a href="https://instagram.com/yasserious_" target="_blank" class="btn btn-primary" data-i18n="gallery-btn">Follow on Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact section">
+                <div class="container">
+                    <div class="section-header animate-on-scroll slide-up">
+                        <h2 data-i18n="contact-title">
+                            Let's <span class="gradient-text">Connect</span>
+                        </h2>
+                        <p data-i18n="contact-subtitle">
+                            Ready to discuss opportunities, collaborations, or
+                            just have a conversation about manufacturing
+                            innovation.
+                        </p>
+                    </div>
+
+                    <div class="grid two contact-grid">
+                        <!-- Form -->
+                        <!-- TEMPORARILY DISABLED
+                        <div
+                            class="contact-form-wrap glass-card animate-on-scroll slide-right"
+                        >
+                            <h3>Send Me a Message</h3>
+                            <form id="contactForm" class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        required
+                                        placeholder="John Doe"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        required
+                                        placeholder="john@example.com"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        required
+                                        placeholder="How can I help you?"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea
+                                        id="message"
+                                        rows="5"
+                                        required
+                                        placeholder="Your message here..."
+                                    ></textarea>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary submit-btn"
+                                >
+                                    <span>Send Message</span>
+                                    <span class="loader hidden"></span>
+                                </button>
+                                <div
+                                    id="form-message"
+                                    class="form-message hidden"
+                                ></div>
+                            </form>
+                        </div>
+                        -->
+
+                        <!-- Info -->
+                        <div
+                            class="contact-info-wrap glass-card animate-on-scroll slide-left delay-1"
+                        >
+                            <h3 data-i18n="contact-info-title">Contact Information</h3>
+                            <ul class="contact-list">
+                                <li>
+                                    <span class="icon">📧</span>
+                                    <div class="info">
+                                        <span class="label" data-i18n="contact-email">Email</span>
+                                        <a
+                                            href="mailto:yassersalllam@gmail.com"
+                                            class="value"
+                                            >yassersalllam@gmail.com</a
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon">📱</span>
+                                    <div class="info">
+                                        <span class="label" data-i18n="contact-phone">Phone</span>
+                                        <a
+                                            href="tel:+201000986942"
+                                            class="value"
+                                            >+201000986942</a
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon">💬</span>
+                                    <div class="info">
+                                        <span class="label" data-i18n="contact-whatsapp">WhatsApp</span>
+                                        <a
+                                            href="https://api.whatsapp.com/send?phone=+201000986942"
+                                            target="_blank"
+                                            class="value"
+                                            >+201000986942</a
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon">🌐</span>
+                                    <div class="info">
+                                        <span class="label" data-i18n="contact-linkedin">LinkedIn</span>
+                                        <a
+                                            href="https://linkedin.com/in/yasserious"
+                                            target="_blank"
+                                            class="value"
+                                            >linkedin.com/in/yasserious</a
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon">�</span>
+                                    <div class="info">
+                                        <span class="label">Instagram</span>
+                                        <a
+                                            href="https://instagram.com/yasserious_"
+                                            target="_blank"
+                                            class="value"
+                                            >@yasserious_</a
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="icon">📍</span>
+                                    <div class="info">
+                                        <span class="label" data-i18n="contact-location">Location</span>
+                                        <span class="value" data-i18n="location-full"
+                                            >10th Of Ramadan City · 6 October,
+                                            1st District · Egypt</span
+                                        >
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <a href="#hero" class="logo"
+                        >Y<span class="gradient-text">.</span>Sallam</a
+                    >
+                    <p class="tagline">
+                        Technical Creative & Production Expert
+                    </p>
+                    <div class="legal">
+                        <p>&copy; 2026 Yasser Sallam. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
