@@ -18,7 +18,7 @@ jobs:
       - name: 📂 Sync files via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          protocol: ftps
+          protocol: ftp
           server: ${{ secrets.SFTP_HOST }}
           port: 21
           username: ${{ secrets.SFTP_USERNAME }}
