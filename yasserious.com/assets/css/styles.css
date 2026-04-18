@@ -159,8 +159,7 @@ body.dark-theme {
   border-radius: 12px;
   border: 1px solid var(--first-color);
   box-shadow: 0 24px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(180,150,90,0.08);
-  max-width: 860px;
-  margin: 0 auto;
+  width: 100%;
   padding: 0 0 24px;
   overflow: hidden;
   position: relative;
