@@ -119,19 +119,159 @@ body.dark-theme {
   --container-color: #201e18;
 }
 
-/*========== 
-    Color changes in some parts of 
-    the website, in light theme
-==========*/
+/* Glassmorphism & Refinements */
 .dark-theme .nav__menu,
 .dark-theme .nav__buttons,
 .dark-theme .scrollup {
     background-color: rgba(32, 30, 24, 0.8);
     backdrop-filter: blur(24px);
+    border: 1px solid rgba(237, 225, 203, 0.1);
 }
 
 .dark-theme .section__border {
     border-bottom: 1px solid rgba(237, 225, 203, 0.15);
+}
+
+/* Core Layout Utilities (Tailwind Replacements) */
+.flex { display: flex; }
+.grid { display: grid; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.overflow-hidden { overflow: hidden; }
+.rounded-sm { border-radius: 0.125rem; }
+.aspect-square { aspect-ratio: 1 / 1; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.object-cover { object-fit: cover; }
+.cursor-pointer { cursor: pointer; }
+.transition-all { transition: all 0.3s ease; }
+
+/*=============== INSTAGRAM WIDGET ===============*/
+.ig-widget-root {
+  background: var(--container-color);
+  border-radius: 12px;
+  border: 1px solid var(--first-color);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.8), inset 0 1px 0 rgba(180,150,90,0.08);
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 0 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ig-noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 128px;
+}
+
+.ig-avatar-ring {
+  background: linear-gradient(135deg, var(--first-color), #8B6914, var(--first-color));
+  background-size: 200% 200%;
+  animation: ringRotate 4s linear infinite;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+@keyframes ringRotate {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.ig-stat-divider {
+  width: 1px;
+  height: 24px;
+  background: linear-gradient(180deg, transparent, var(--first-color), transparent);
+}
+
+.ig-follow-btn {
+  height: 36px;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid rgba(201,168,76,0.7);
+  background: linear-gradient(135deg, var(--first-color), #8B6914);
+  color: var(--body-color);
+  transition: all 0.3s ease;
+}
+
+.ig-follow-btn.followed {
+  background: rgba(180,150,90,0.08);
+  border: 1px solid rgba(180,150,90,0.4);
+  color: rgba(180,150,90,0.7);
+}
+
+.ig-card {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border: 1px solid var(--first-color);
+  transition: all 0.35s ease;
+}
+
+.ig-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 0 1px var(--first-color), 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.ig-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: brightness(0.85);
+}
+
+.ig-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.45);
+}
+
+.ig-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ig-card:hover .ig-card__overlay {
+  opacity: 1;
+}
+
+.ig-shimmer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--first-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ig-card:hover .ig-shimmer {
+  opacity: 1;
 }
 
 .dark-theme ::-webkit-scrollbar {
