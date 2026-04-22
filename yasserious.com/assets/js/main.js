@@ -178,12 +178,8 @@ if (typeof ScrollReveal !== 'undefined') {
     sr.reveal('.home__data, .home__images')
     sr.reveal('.home__info div', {delay: 600, origin: 'bottom', interval: 100})
     
-    // Services animations
-    sr.reveal('.services__card', {interval: 100})
-    
-    // Skills animations
-    sr.reveal('.skills__content:nth-child(1)', {origin: 'left'})
-    sr.reveal('.skills__content:nth-child(2)', {origin: 'right'})
+    // Expertise animations
+    sr.reveal('.expertise__card', {interval: 100})
     
     // About page animations
     sr.reveal('.summary__card', {interval: 100})
