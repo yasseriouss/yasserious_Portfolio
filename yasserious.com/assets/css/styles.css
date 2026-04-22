@@ -1793,7 +1793,7 @@ textarea:focus-visible {
     
     .cta {
         margin: 0 auto;
-        max-width: 900px;
+        width: 100%;
     }
     
     .cta__content {
@@ -1874,10 +1874,10 @@ textarea:focus-visible {
         grid-template-columns: repeat(3, 1fr);
     }
     .projects__container {
-        width: 600px;
+        width: 100%;
     }
     .testimonial__container {
-        width: 600px;
+        width: 100%;
     }
 }
 

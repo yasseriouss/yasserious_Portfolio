@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Mastering WoodWOP DXF Layers - Yasser Salam Blog</title>
+    <meta name="description" content="A comprehensive guide to setting up DXF layer logic in Homag's WoodWOP software to streamline operations from CAD design straight to the machine bed.">
+    <meta name="keywords" content="WoodWOP, DXF Layers, Homag, CNC, Manufacturing, Yasser Salam">
+    <meta name="author" content="Yasser Salam">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yasserious.com/blog-template.html">
+    <meta property="og:title" content="Mastering WoodWOP DXF Layers - Yasser Salam Blog">
+    <meta property="og:description" content="A comprehensive guide to setting up DXF layer logic in Homag's WoodWOP software.">
+    <meta property="og:image" content="https://yasserious.com/assets/img/project-cnc.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yasserious.com/blog-template.html">
+    <meta property="twitter:title" content="Mastering WoodWOP DXF Layers - Yasser Salam Blog">
+    <meta property="twitter:description" content="A comprehensive guide to setting up DXF layer logic in Homag's WoodWOP software.">
+    <meta property="twitter:image" content="https://yasserious.com/assets/img/project-cnc.jpg">
+
+    <link rel="canonical" href="https://yasserious.com/blog-template.html">
+</head>
+<body class="dark-theme">
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav" style="margin: 0 15px; width: calc(100% - 30px); max-width: none;">
+            <a href="index.html" class="nav__logo">Yasser<span style="color: var(--first-color)">.</span></a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link"><i class="ri-home-5-line"></i><span>Home</span></a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link"><i class="ri-user-3-line"></i><span>About</span></a></li>
+                    <li class="nav__item"><a href="projects.html" class="nav__link"><i class="ri-folder-line"></i><span>Projects</span></a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link active-link"><i class="ri-article-line"></i><span>Blog</span></a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link"><i class="ri-message-3-line"></i><span>Contact</span></a></li>
+                </ul>
+
+                <div class="nav__close" id="nav-close"><i class="ri-close-line"></i></div>
+            </div>
+
+            <div class="nav__buttons">
+                <i class="ri-sun-line change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle"><i class="ri-menu-4-line"></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== BLOG POST ====================-->
+        <section class="blog-post section">
+            <div style="margin: 15px; padding: 15px; width: calc(100% - 30px); max-width: none;">
+                
+                <article class="post__container">
+                    <!-- Post Header -->
+                    <header class="post__header">
+                        <div class="post__meta">
+                            <span class="post__date"><i class="ri-calendar-line"></i> May 15, 2026</span>
+                            <span class="post__category">Manufacturing</span>
+                        </div>
+                        <h1 class="post__title">Mastering WoodWOP DXF Layers for Automated Production</h1>
+                        
+                        <!-- Post Author Info -->
+                        <div class="post__author">
+                            <div class="post__author-info">
+                                <span class="post__author-name">By Yasser Salam</span>
+                                <span class="post__author-role">CNC Process R&D Engineer</span>
+                            </div>
+                        </div>
+
+                        <!-- Hero Image -->
+                        <div class="post__hero-image">
+                            <img src="assets/img/project-cnc.jpg" alt="CNC Process Optimization">
+                        </div>
+                    </header>
+
+                    <!-- Post Content -->
+                    <div class="post__content">
+                        <p class="post__intro">
+                            Automating the transfer of data from CAD software directly to the CNC machine is one of the most critical steps in modernizing a furniture manufacturing plant. In this guide, I'll walk you through the logic behind setting up DXF layers in Homag's WoodWOP to achieve a seamless CAD-to-CAM pipeline.
+                        </p>
+
+                        <h2>The Importance of Naming Conventions</h2>
+                        <p>
+                            Without a strict naming convention for your DXF layers, WoodWOP's BPP5 post-processor won't know how to interpret the geometry. Should this line be a routing contour or a saw cut? Should this circle be a through-hole or a 5mm blind hole for a shelf pin?
+                        </p>
+                        <p>
+                            By assigning specific layer names (e.g., <code>ROUT_OUTLINE_Z15</code> or <code>DRILL_D5_Z12</code>), we can map these directly to WoodWOP macros.
+                        </p>
+
+                        <h3>Standard Layer Setup</h3>
+                        <ul>
+                            <li><strong>Contours:</strong> Define outer and inner routing operations. Use Z-depth in the layer name to automate depth settings.</li>
+                            <li><strong>Drilling:</strong> Separate layers by diameter and depth. E.g., <code>V_DRILL_5MM_DEPTH12</code> for vertical drilling.</li>
+                            <li><strong>Sawing:</strong> Grooves for back panels should have their own dedicated layer.</li>
+                        </ul>
+
+                        <blockquote>
+                            "Automation in CNC is not just about making the machine move faster; it's about eliminating the human error between the design office and the factory floor."
+                        </blockquote>
+
+                        <h2>Configuring BPP5</h2>
+                        <p>
+                            Once your CAD layers are standardized, the next step is configuring the BPP5 interface. This involves mapping your CAD layers to the corresponding WoodWOP macros (Routing, Drilling, Sawing).
+                        </p>
+                        
+                        <div class="post__image-inline">
+                            <!-- Add an inline image related to the topic if available -->
+                        </div>
+
+                        <p>
+                            In the BPP5 mapping table, you will assign tool numbers, approach strategies, and offsets. It's highly recommended to test these mappings on scrap material before rolling them out to live production.
+                        </p>
+
+                        <h2>Conclusion</h2>
+                        <p>
+                            Implementing DXF layer logic requires an initial investment of time from the engineering team, but the payoff is immense. You'll see a drastic reduction in programming time, fewer errors on the shop floor, and a smoother overall production flow.
+                        </p>
+                    </div>
+
+                    <!-- Post Footer (Tags & Share) -->
+                    <footer class="post__footer">
+                        <div class="post__tags">
+                            <span>Tags:</span>
+                            <a href="#" class="post__tag">WoodWOP</a>
+                            <a href="#" class="post__tag">CNC</a>
+                            <a href="#" class="post__tag">Automation</a>
+                        </div>
+                        
+                        <div class="post__share">
+                            <span>Share:</span>
+                            <a href="#" class="post__share-link"><i class="ri-linkedin-box-line"></i></a>
+                            <a href="#" class="post__share-link"><i class="ri-twitter-line"></i></a>
+                            <a href="#" class="post__share-link"><i class="ri-facebook-circle-line"></i></a>
+                        </div>
+                    </footer>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container" style="margin: 15px; padding: 15px; width: calc(100% - 30px); max-width: none;">
+            <h1 class="footer__title">Yasser Salam</h1>
+            <p>CNC Process R&D Engineer & Industrial Architect</p>
+
+            <ul class="footer__list">
+                <li><a href="index.html" class="footer__link">Home</a></li>
+                <li><a href="about.html" class="footer__link">About</a></li>
+                <li><a href="projects.html" class="footer__link">Projects</a></li>
+                <li><a href="blog.html" class="footer__link">Blog</a></li>
+                <li><a href="contact.html" class="footer__link">Contact</a></li>
+            </ul>
+
+            <ul class="footer__social">
+                <a href="https://linkedin.com/in/yasserious" target="_blank" class="footer__social-link" aria-label="LinkedIn"><i class="ri-linkedin-box-line"></i></a>
+                <a href="https://www.instagram.com/yasserious_/" target="_blank" class="footer__social-link" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                <a href="https://github.com/yasseriouss" target="_blank" class="footer__social-link" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                <a href="mailto:yassersalllam@gmail.com" class="footer__social-link" aria-label="Email"><i class="ri-mail-line"></i></a>
+            </ul>
+
+            <span class="footer__copy">&copy; 2025 Yasser Salam. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
